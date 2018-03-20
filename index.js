@@ -22,8 +22,8 @@ io.on("connection", function(socket){
         io.to(roomNum).emit("userJoined", allUsers[roomNum]);
     });
     
-    socket.on("playInstrument", function(data){
-        socket.broadcast.to(this.myRoom).emit("playInstrument", data)   
+    socket.on("playInstrument", function(data1, data2){
+        socket.broadcast.to(this.myRoom).emit("playInstrument", data1, data2)
     })
     
     //leaving room 1
